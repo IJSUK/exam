@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جامعة الامام جعفر الصادق(ع)/فرع كركوك</title>
+    <style>
+        body {
+            background-color: #95B9C7;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            display: none;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #ddd;
+        }
+
+        header {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+
+        main {
+            text-align: center;
+        }
+    </style>
+    <script>
+        var tableData = [
+          { col1: "احمد ياسين احمد محمد", col2: "1", col3: "الارضي", col4: "3" }, 
+{ col1: "ثامر عبد الرحمن محمد علي", col2: "2", col3: "الارضي", col4: "5" }, 
+{ col1: "شكر عباس سمين حسن", col2: "1", col3: "3", col4: "1" }, 
+{ col1: "صالح ابراهيم عياده مصلح", col2: "2", col3: "الارضي", col4: "6" }, 
+{ col1: "علي حسن علي حماده", col2: "1", col3: "3", col4: "4" }, 
+{ col1: "مصلح عايد مطر مسيحل", col2: "1", col3: "2", col4: "6" }, 
+{ col1: "ناطق قاسم كريم حمود", col2: "2", col3: "2", col4: "6" }, 
+{ col1: "ابراهيم شلال فاضل بيات", col2: "1", col3: "1", col4: "5" }, 
+{ col1: "احمد يشار زين العابدين حسين", col2: "1", col3: "الارضي", col4: "4" }, 
+{ col1: "يونس امير هدايت محمد امين", col2: "2", col3: "الارضي", col4: "5" }, 
+{ col1: "يونس عامر مساهر محمود", col2: "2", col3: "1", col4: "6" }, 
+{ col1: "احمد محمد حسين خشان", col2: "2", col3: "1", col4: "4" }, 
+{ col1: "اسماعيل خليل قادر سلطان", col2: "2", col3: "الارضي", col4: "2" }, 
+{ col1: "ايوب جمعه جبار محمد", col2: "1", col3: "الارضي", col4: "1" }, 
+{ col1: "توفيق سيف الدين رسول حمزة", col2: "2", col3: "1", col4: "2" }, 
+{ col1: "شاهين عادل محمد رضا", col2: "1", col3: "1", col4: "2" }, 
+{ col1: "صالح عيدان محمد صبح", col2: "2", col3: "الارضي", col4: "4" }, 
+{ col1: "صهيب سمير عبد جارالله", col2: "1", col3: "3", col4: "3" }, 
+{ col1: "عباس سعدي نوري غائب", col2: "1", col3: "1", col4: "6" }, 
+{ col1: "علاء طالب خليل حسن", col2: "2", col3: "الارضي", col4: "2" }, 
+{ col1: "علي عدنان شكر خورشيد", col2: "2", col3: "1", col4: "5" }, 
+{ col1: "مثنى عز الدين محمد عبد الرحمن", col2: "2", col3: "2", col4: "5" }, 
+{ col1: "محمد ابراهيم قادر محمدعلي", col2: "2", col3: "2", col4: "2" }, 
+{ col1: "محمد سلطان نجم عبدالله", col2: "2", col3: "1", col4: "4" }, 
+{ col1: "مروان فارس حماد يوسف", col2: "1", col3: "2", col4: "6" }, 
+{ col1: "نجاة مشتت حسن وداي", col2: "1", col3: "3", col4: "6" }, 
+{ col1: "وليد خورشيد علي خورشيد", col2: "1", col3: "1", col4: "3" }, 
+{ col1: "وسام محمد حسين علاوي", col2: "2", col3: "2", col4: "6" }, 
+{ col1: "نزهان جمال يوسف محمود", col2: "1", col3: "الارضي", col4: "2" }, 
+{ col1: "وسام طارق محمد درويش", col2: "2", col3: "1", col4: "2" }, 
+{ col1: "يونس فائق محمود محمد", col2: "2", col3: "1", col4: "2" }, 
+{ col1: "احمد مهدي عباس جاسم", col2: "1", col3: "1", col4: "5" }, 
+{ col1: "عادل عمر شاكر علي", col2: "2", col3: "2", col4: "6" }, 
+{ col1: "زينب محمد جبار زغير", col2: "2", col3: "الارضي", col4: "5" }, 
+{ col1: "محمد كريم عبد الله صالح", col2: "2", col3: "2", col4: "1" }, 
+{ col1: "احمد عباس تقي حقي", col2: "1", col3: "2", col4: "3" }, 
+{ col1: "احمد ياسين عبد الله حسين", col2: "1", col3: "3", col4: "4" }, 
+{ col1: "عباس هدايت ابراهيم محمد", col2: "2", col3: "الارضي", col4: "3" }, 
+{ col1: "عبد الوهاب نجم الدين احمد وهاب", col2: "1", col3: "3", col4: "5" }, 
+{ col1: "كرار علي خليل كريم", col2: "2", col3: "3", col4: "1" }, 
+{ col1: "كرار مصطفى عباس عسكر", col2: "2", col3: "3", col4: "5" }, 
+{ col1: "محمد تكبير غائب سمين", col2: "1", col3: "2", col4: "1" }, 
+{ col1: "منتظر مهدي عزيز عباس", col2: "1", col3: "1", col4: "5" }, 
+{ col1: "ابراهيم رافق علي خليل", col2: "1", col3: "2", col4: "2" }, 
+{ col1: "ابراهيم طيب محمد مصطفى", col2: "1", col3: "1", col4: "1" }, 
+
+
+
+ 
+
+
+            // Add more rows as needed
+        ];
+
+        function searchTable(event) {
+            // Check if the pressed key is Enter (key code 13) or if the event is undefined (button click)
+            if (event && event.keyCode !== 13) {
+                return;
+            }
+
+            // Get the search query from the input field
+            var searchQuery = document.getElementById("searchQuery").value.trim().toLowerCase();
+
+            // Minimum word requirement for search (change as needed)
+            var minWords = 2; // Adjusted to 2 words
+
+            // Split the search query into words and filter out empty strings
+            var wordsInQuery = searchQuery.split(/\s+/).filter(function (word) {
+                return word.length > 0;
+            });
+
+            // Check if the search query has at least the minimum required words
+            if (wordsInQuery.length >= minWords) {
+                // Get all rows in the table
+                var rows = document.querySelectorAll("#dynamicTable tr");
+
+                // Loop through each row starting from the second row (index 1)
+                for (var i = 1; i < rows.length; i++) {
+                    // Get the content of all columns in the row
+                    var rowContent = rows[i].textContent.toLowerCase();
+
+                    // Check if the search query is found in any cell of the row
+                    if (wordsInQuery.every(function (word) {
+                        return rowContent.includes(word);
+                    })) {
+                        // Display the entire row
+                        rows[i].style.display = "";
+                    } else {
+                        // Hide rows that don't match the search query
+                        rows[i].style.display = "none";
+                    }
+                }
+
+                // Display the table
+                document.getElementById("dynamicTable").style.display = "table";
+            } else {
+                // If the search query has less than the minimum required words, hide the table
+                document.getElementById("dynamicTable").style.display = "none";
+            }
+        }
+
+        function refreshPage() {
+            location.reload(); // Reload the page
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Dynamically generate the table based on the array
+            var table = document.getElementById("dynamicTable");
+
+            // Create the header row
+            var headerRow = document.createElement("tr");
+            headerRow.innerHTML = "<th>اسم الطالب</th><th>رقم البناية</th><th>رقم الطابق</th><th>رقم القاعة</th>";
+
+            table.appendChild(headerRow);
+
+            // Create rows for each item in the array
+            tableData.forEach(function (item, index) {
+                var row = document.createElement("tr");
+
+                for (var key in item) {
+                    var column = document.createElement("td");
+                    column.textContent = item[key];
+                    row.appendChild(column);
+                }
+
+                // Alternate row colors
+                row.style.backgroundColor = index % 2 === 0 ? "#f9f9f9" : "#ddd";
+
+                table.appendChild(row);
+            });
+
+            // Show the header row by default
+            headerRow.style.display = "";
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>جامعة الامام جعفر الصادق(ع)/ فرع كركوك</h1>
+        <h1>نظام توزيع الطلبة على القاعات الامتحانية للامتحانات النهائية للعام الدراسي 2023 - 2024</h1>
+        <h1>بحث عن مكان جلوس الطالب</h1>
+    </header>
+
+    <main>
+        <form>
+            <h2></h2>
+            <label for="searchQuery">اكتب اسمك الثلاثي هنا:</label>
+            <input type="text" id="searchQuery" placeholder="اكتب البحث هنا" onkeydown="searchTable(event)" required>
+            <button type="button" onclick="searchTable()">ابحث</button>
+            <button type="button" onclick="refreshPage()">ابحث مرة اخرى</button>
+        </form>
+
+        <table id="dynamicTable">
+            <!-- Table will be dynamically generated here -->
+        </table>
+    </main>
+
+    <footer>
+        <p>&copy; جامعة الامام جعفر الصادق (ع)/ فرع كركوك.</p>
+    </footer>
+</body>
+
+</html>
